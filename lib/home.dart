@@ -1,3 +1,4 @@
+import 'package:url_launcher/url_launcher.dart';
 import 'dart:math';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -24,9 +25,7 @@ class _HomeState extends State<Home>{
     get_quotes();
     random();
     super.initState();
-  }
-
-  
+  }  
 
 
   @override
@@ -60,7 +59,7 @@ class _HomeState extends State<Home>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dynamic Quotes"),
+        title: Center(child: Text("Dynamic Quotes")),
       ),
       body: isLoaded
           ? Center(child: CircularProgressIndicator())
@@ -72,12 +71,8 @@ class _HomeState extends State<Home>{
                   children: [
                     SizedBox(height: 10,),
                     Align(
-                        alignment: Alignment.topRight,
-                        child: Image.asset(
-                          "assets/twitterlogo.png",
-                          height: 30,
-                          width: 60,
-                        )),
+                      alignment: Alignment.topRight,
+                      child: Image.asset('assets/quoteslogo.png', height: 60, width: 80,)), 
                     Container(
                       padding: EdgeInsets.all(18),
                       decoration: BoxDecoration(
